@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
+status "In detect phase"
+echo $1
+
 if [ -f $1/jenkins.war ]; then
   echo "jenkins.war" && exit 0
 else
