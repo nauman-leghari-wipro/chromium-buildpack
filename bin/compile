@@ -31,15 +31,18 @@ pushd $vendor_dir
   mv $JRE_DIR jre
 popd
 
-#status "Repacking jenkins.war."
-#pushd $build_dir
-#  zip -q -r jenkins.war * -x "vendor/*"
-#popd
+status "Repacking jenkins.war."
+pushd $build_dir
+  zip -q -r jenkins.war * -x "vendor/*"
+popd
 
 # Update the PATH
 status "Building runtime environment."
 echo $1
 echo $2
+
+status "Downloading Libraries for running ChromeDriver"
+apt-get install libnss3 libgconf-2-4
 
 # see this script
 # https://github.com/cloudfoundry/dea_ng/blob/e39ad94e5ea71c33ce91333803a1a956d652a738/lib/dea/starting/startup_script_generator.rb
