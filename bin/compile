@@ -41,8 +41,12 @@ status "Building runtime environment."
 echo $1
 echo $2
 
-status "Downloading Libraries for running ChromeDriver"
-sudo apt-get -y install libnss3 libgconf-2-4
+#status "Downloading Libraries for running ChromeDriver"
+#for file in $bp_dir/files/*.deb
+#do
+#    ar x "$file" && tar xf data.tar.* && rm control.tar.* && rm data.tar.* && rm debian-binary
+#done
+
 
 # see this script
 # https://github.com/cloudfoundry/dea_ng/blob/e39ad94e5ea71c33ce91333803a1a956d652a738/lib/dea/starting/startup_script_generator.rb
